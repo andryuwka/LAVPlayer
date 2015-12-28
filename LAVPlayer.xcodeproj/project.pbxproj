@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3E5751D437936CDBD0911060 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48F9AC0FBF92FD6FF9F79904 /* libPods.a */; };
+		49FF49781BD52ADB00C15241 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FF49771BD52ADB00C15241 /* main.m */; };
+		49FF497B1BD52ADB00C15241 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FF497A1BD52ADB00C15241 /* AppDelegate.m */; };
+		49FF49811BD52ADB00C15241 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FF497F1BD52ADB00C15241 /* Main.storyboard */; };
+		49FF49831BD52ADB00C15241 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FF49821BD52ADB00C15241 /* Assets.xcassets */; };
+		49FF49931BD53C3600C15241 /* LAVLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FF49921BD53C3600C15241 /* LAVLoginVC.m */; };
+		49FF499C1BD583B100C15241 /* LAVDownloadsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FF499B1BD583B100C15241 /* LAVDownloadsTVC.m */; };
+		49FF499F1BD5884700C15241 /* LAVMyMusicTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FF499E1BD5884700C15241 /* LAVMyMusicTVC.m */; };
+		49FF49A31BD599D500C15241 /* LAVAudioReqResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FF49A21BD599D500C15241 /* LAVAudioReqResult.m */; };
+		49FF49A61BD5A89D00C15241 /* LAVMusicPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FF49A51BD5A89D00C15241 /* LAVMusicPlayerVC.m */; };
+		49FF49A81BD5C9E300C15241 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FF49A71BD5C9E300C15241 /* AVFoundation.framework */; };
+		49FF49AB1BD5CD0D00C15241 /* LAVAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FF49AA1BD5CD0D00C15241 /* LAVAudioPlayer.m */; };
+		49FF49AD1BD5CF3E00C15241 /* audiofile.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 49FF49AC1BD5CF3E00C15241 /* audiofile.mp3 */; };
+		59A5A7961BEA8F2A000D4DEE /* LAVDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A5A7951BEA8F2A000D4DEE /* LAVDownloadManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		192D4BA5539480D90D68FF37 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		48F9AC0FBF92FD6FF9F79904 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		49FF49731BD52ADB00C15241 /* LAVPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LAVPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49FF49771BD52ADB00C15241 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		49FF49791BD52ADB00C15241 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		49FF497A1BD52ADB00C15241 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		49FF49801BD52ADB00C15241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49FF49821BD52ADB00C15241 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49FF49871BD52ADB00C15241 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49FF49911BD53C3600C15241 /* LAVLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAVLoginVC.h; sourceTree = "<group>"; };
+		49FF49921BD53C3600C15241 /* LAVLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAVLoginVC.m; sourceTree = "<group>"; };
+		49FF499A1BD583B100C15241 /* LAVDownloadsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAVDownloadsTVC.h; sourceTree = "<group>"; };
+		49FF499B1BD583B100C15241 /* LAVDownloadsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAVDownloadsTVC.m; sourceTree = "<group>"; };
+		49FF499D1BD5884700C15241 /* LAVMyMusicTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAVMyMusicTVC.h; sourceTree = "<group>"; };
+		49FF499E1BD5884700C15241 /* LAVMyMusicTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAVMyMusicTVC.m; sourceTree = "<group>"; };
+		49FF49A11BD599D500C15241 /* LAVAudioReqResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAVAudioReqResult.h; sourceTree = "<group>"; };
+		49FF49A21BD599D500C15241 /* LAVAudioReqResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAVAudioReqResult.m; sourceTree = "<group>"; };
+		49FF49A41BD5A89D00C15241 /* LAVMusicPlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAVMusicPlayerVC.h; sourceTree = "<group>"; };
+		49FF49A51BD5A89D00C15241 /* LAVMusicPlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAVMusicPlayerVC.m; sourceTree = "<group>"; };
+		49FF49A71BD5C9E300C15241 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		49FF49A91BD5CD0D00C15241 /* LAVAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAVAudioPlayer.h; sourceTree = "<group>"; };
+		49FF49AA1BD5CD0D00C15241 /* LAVAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAVAudioPlayer.m; sourceTree = "<group>"; };
+		49FF49AC1BD5CF3E00C15241 /* audiofile.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = audiofile.mp3; sourceTree = "<group>"; };
+		59A5A7941BEA8F2A000D4DEE /* LAVDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAVDownloadManager.h; sourceTree = "<group>"; };
+		59A5A7951BEA8F2A000D4DEE /* LAVDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAVDownloadManager.m; sourceTree = "<group>"; };
+		CF28E96D943FC09AE2E13BB1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49FF49701BD52ADB00C15241 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49FF49A81BD5C9E300C15241 /* AVFoundation.framework in Frameworks */,
+				3E5751D437936CDBD0911060 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49FF496A1BD52ADB00C15241 = {
+			isa = PBXGroup;
+			children = (
+				49FF49751BD52ADB00C15241 /* LAVPlayer */,
+				49FF49741BD52ADB00C15241 /* Products */,
+				F6718EB4F180343BD74C0C8C /* Pods */,
+				AAAEDAE40E1D33580463374A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		49FF49741BD52ADB00C15241 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49FF49731BD52ADB00C15241 /* LAVPlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49FF49751BD52ADB00C15241 /* LAVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				49FF49A01BD599B000C15241 /* Models */,
+				49FF49901BD53C0A00C15241 /* Controllers */,
+				49FF49791BD52ADB00C15241 /* AppDelegate.h */,
+				49FF497A1BD52ADB00C15241 /* AppDelegate.m */,
+				49FF497F1BD52ADB00C15241 /* Main.storyboard */,
+				49FF49821BD52ADB00C15241 /* Assets.xcassets */,
+				49FF49871BD52ADB00C15241 /* Info.plist */,
+				49FF49761BD52ADB00C15241 /* Supporting Files */,
+			);
+			path = LAVPlayer;
+			sourceTree = "<group>";
+		};
+		49FF49761BD52ADB00C15241 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49FF49AC1BD5CF3E00C15241 /* audiofile.mp3 */,
+				49FF49771BD52ADB00C15241 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49FF49901BD53C0A00C15241 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				49FF49911BD53C3600C15241 /* LAVLoginVC.h */,
+				49FF49921BD53C3600C15241 /* LAVLoginVC.m */,
+				49FF499A1BD583B100C15241 /* LAVDownloadsTVC.h */,
+				49FF499B1BD583B100C15241 /* LAVDownloadsTVC.m */,
+				49FF499D1BD5884700C15241 /* LAVMyMusicTVC.h */,
+				49FF499E1BD5884700C15241 /* LAVMyMusicTVC.m */,
+				49FF49A41BD5A89D00C15241 /* LAVMusicPlayerVC.h */,
+				49FF49A51BD5A89D00C15241 /* LAVMusicPlayerVC.m */,
+				59A5A7941BEA8F2A000D4DEE /* LAVDownloadManager.h */,
+				59A5A7951BEA8F2A000D4DEE /* LAVDownloadManager.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		49FF49A01BD599B000C15241 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				49FF49A11BD599D500C15241 /* LAVAudioReqResult.h */,
+				49FF49A21BD599D500C15241 /* LAVAudioReqResult.m */,
+				49FF49A91BD5CD0D00C15241 /* LAVAudioPlayer.h */,
+				49FF49AA1BD5CD0D00C15241 /* LAVAudioPlayer.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		AAAEDAE40E1D33580463374A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49FF49A71BD5C9E300C15241 /* AVFoundation.framework */,
+				48F9AC0FBF92FD6FF9F79904 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6718EB4F180343BD74C0C8C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF28E96D943FC09AE2E13BB1 /* Pods.debug.xcconfig */,
+				192D4BA5539480D90D68FF37 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49FF49721BD52ADB00C15241 /* LAVPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49FF498A1BD52ADB00C15241 /* Build configuration list for PBXNativeTarget "LAVPlayer" */;
+			buildPhases = (
+				3B8560E9B19AF4E034360C4D /* Check Pods Manifest.lock */,
+				49FF496F1BD52ADB00C15241 /* Sources */,
+				49FF49701BD52ADB00C15241 /* Frameworks */,
+				49FF49711BD52ADB00C15241 /* Resources */,
+				74B790CE90C96319187017AA /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LAVPlayer;
+			productName = LAVPlayer;
+			productReference = 49FF49731BD52ADB00C15241 /* LAVPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49FF496B1BD52ADB00C15241 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Andrew Lebedev";
+				TargetAttributes = {
+					49FF49721BD52ADB00C15241 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 9ZRL6WQ232;
+					};
+				};
+			};
+			buildConfigurationList = 49FF496E1BD52ADB00C15241 /* Build configuration list for PBXProject "LAVPlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49FF496A1BD52ADB00C15241;
+			productRefGroup = 49FF49741BD52ADB00C15241 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49FF49721BD52ADB00C15241 /* LAVPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49FF49711BD52ADB00C15241 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49FF49AD1BD5CF3E00C15241 /* audiofile.mp3 in Resources */,
+				49FF49831BD52ADB00C15241 /* Assets.xcassets in Resources */,
+				49FF49811BD52ADB00C15241 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3B8560E9B19AF4E034360C4D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		74B790CE90C96319187017AA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49FF496F1BD52ADB00C15241 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49FF497B1BD52ADB00C15241 /* AppDelegate.m in Sources */,
+				49FF49931BD53C3600C15241 /* LAVLoginVC.m in Sources */,
+				49FF49781BD52ADB00C15241 /* main.m in Sources */,
+				49FF49A61BD5A89D00C15241 /* LAVMusicPlayerVC.m in Sources */,
+				59A5A7961BEA8F2A000D4DEE /* LAVDownloadManager.m in Sources */,
+				49FF499C1BD583B100C15241 /* LAVDownloadsTVC.m in Sources */,
+				49FF49AB1BD5CD0D00C15241 /* LAVAudioPlayer.m in Sources */,
+				49FF499F1BD5884700C15241 /* LAVMyMusicTVC.m in Sources */,
+				49FF49A31BD599D500C15241 /* LAVAudioReqResult.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		49FF497F1BD52ADB00C15241 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49FF49801BD52ADB00C15241 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49FF49881BD52ADB00C15241 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		49FF49891BD52ADB00C15241 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49FF498B1BD52ADB00C15241 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF28E96D943FC09AE2E13BB1 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LAVPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.LAVPlayer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		49FF498C1BD52ADB00C15241 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 192D4BA5539480D90D68FF37 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LAVPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "-.LAVPlayer";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49FF496E1BD52ADB00C15241 /* Build configuration list for PBXProject "LAVPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49FF49881BD52ADB00C15241 /* Debug */,
+				49FF49891BD52ADB00C15241 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49FF498A1BD52ADB00C15241 /* Build configuration list for PBXNativeTarget "LAVPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49FF498B1BD52ADB00C15241 /* Debug */,
+				49FF498C1BD52ADB00C15241 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49FF496B1BD52ADB00C15241 /* Project object */;
+}
