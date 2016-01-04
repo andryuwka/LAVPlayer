@@ -10,6 +10,7 @@
 #import "VKSdk.h"
 #import "LAVAudioReqResult.h"
 #import "LAVMusicPlayerVC.h"
+#import "LAVTrackCell.h"
 
 @interface LAVMyMusicTVC ()
 
@@ -22,8 +23,11 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
+  [self.tableView setRowHeight:UITableViewAutomaticDimension];
+  [self.tableView registerNib:[UINib nibWithNibName:@"LAVTrackCell" bundle:nil]
+       forCellReuseIdentifier:@"Cell"];
+
   [self getAudios];
-    
 }
 
 - (void)getAudios {
@@ -66,7 +70,7 @@
 
 - (void)setTrackList:(NSArray *)trackList {
   _trackList = trackList;
-    [LAVAudioPlayer sharedInstance].trackList = self.trackList;
+  [LAVAudioPlayer sharedInstance].trackList = self.trackList;
   [self.tableView reloadData];
 }
 
@@ -90,18 +94,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   static NSString *identifier = @"Cell";
-  UITableViewCell *cell =
-      [tableView dequeueReusableCellWithIdentifier:identifier];
+  LAVTrackCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
   cell.selectionStyle = UITableViewCellSelectionStyleNone;
   if (!cell) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                  reuseIdentifier:identifier];
+    cell = [[LAVTrackCell alloc] initWithStyle:UITableViewCellStyleDefault
+                               reuseIdentifier:identifier];
   }
 
   NSArray *list = self.trackList;
   LAVAudioReqResult *current = list[indexPath.row];
-  cell.textLabel.text =
-      [NSString stringWithFormat:@"%@ - %@", current.artist, current.title];
+  
+  [cell setArtist:current.artist title:current.title andUrl:current.url];
 
   return cell;
 }
@@ -118,13 +121,12 @@
   [LAVAudioPlayer sharedInstance].currentTrack =
       self.trackList[self.selectedTrack];
   [LAVAudioPlayer sharedInstance].currentTrackIndex = indexPath.row;
-    NSLog(@"%ld", [LAVAudioPlayer sharedInstance].currentTrackIndex);
+  NSLog(@"%ld", [LAVAudioPlayer sharedInstance].currentTrackIndex);
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([[segue identifier] isEqualToString:@"TO_PLAYER"]) {
-    //LAVMusicPlayerVC *vc = [segue destinationViewController];
-      
+    // LAVMusicPlayerVC *vc = [segue destinationViewController];
   }
 }
 

@@ -27,6 +27,7 @@
 
 - (NSArray *)getAudios;
 - (LAVAudioReqResult *)getNextTrack;
+- (LAVAudioReqResult *)getPrevTrack;
 - (NSString *)timeFormat:(float)value;
 
 - (void)playWithURL:(NSURL *)url;

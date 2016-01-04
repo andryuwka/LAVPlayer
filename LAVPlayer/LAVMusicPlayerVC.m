@@ -22,8 +22,12 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-
   self.playController = [LAVAudioPlayer sharedInstance];
+
+  NSString *artist = [LAVAudioPlayer sharedInstance].currentTrack.artist;
+  NSString *title = [LAVAudioPlayer sharedInstance].currentTrack.title;
+  [self.labelTitle
+      setText:[NSString stringWithFormat:@"%@ - %@", artist, title]];
 
   [self addObserver:self
          forKeyPath:@"asset"
@@ -71,7 +75,6 @@
                                                         getAudioDuration] -
                                                 [weakSelf.playController
                                                         getCurrentAudioTime]]];
-
                               }];
 
   NSURL *url =
@@ -83,20 +86,22 @@
 
 - (void)itemDidFinishPlaying:(NSNotification *)notification {
   [self.playController setCurrentAudioTime:kCMTimeZero.value];
-    /*
-  LAVAudioReqResult *nextTrack = [[LAVAudioPlayer sharedInstance] getNextTrack];
-    
-  NSURL *url = [NSURL URLWithString:nextTrack.url];
-  self.asset = [AVURLAsset assetWithURL:url];
-  */
-     [self.playController playAudio];
-     
+  [self.playController playAudio];
+}
+
+- (void)refreshLabels {
+  dispatch_async(dispatch_get_main_queue(), ^{
+    self.labelElapsedTime.text = @"0:00";
+    self.labelLeftTime.text = @"-0:00";
+  });
 }
 
 - (void)prepareViews {
   [self.buttonPlay setTitle:@"" forState:UIControlStateNormal];
   [self.buttonPrev setTitle:@"" forState:UIControlStateNormal];
   [self.buttonNext setTitle:@"" forState:UIControlStateNormal];
+
+  [self refreshLabels];
 
   imagePlay = [UIImage imageNamed:@"play"];
   imagePause = [UIImage imageNamed:@"pause"];
@@ -117,7 +122,7 @@
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    
+
   if (context) {
     // KVO isn't for us.
     [super observeValueForKeyPath:keyPath
@@ -129,7 +134,9 @@
 
   if ([keyPath isEqualToString:@"asset"]) {
     if (self.asset) {
-        NSLog(@"asynchronouslyLoadURLAsset");
+      NSLog(@"asynchronouslyLoadURLAsset");
+      [self pause];
+      [self refreshLabels];
       [self asynchronouslyLoadURLAsset:self.asset];
     }
   } else if ([keyPath isEqualToString:
@@ -168,6 +175,7 @@
                  isEqualToString:@"playController.player.currentItem.status"]) {
 
     NSNumber *newStatusAsNumber = change[NSKeyValueChangeNewKey];
+
     AVPlayerItemStatus newStatus =
         [newStatusAsNumber isKindOfClass:[NSNumber class]]
             ? newStatusAsNumber.integerValue
@@ -188,10 +196,8 @@
   }
 }
 
-
-
 - (void)asynchronouslyLoadURLAsset:(AVURLAsset *)newAsset {
-    
+
   [newAsset
       loadValuesAsynchronouslyForKeys:LAVMusicPlayerVC.assetKeysRequiredToPlay
                     completionHandler:^{
@@ -216,7 +222,7 @@
                                     key];
 
                             [self handleErrorWithMessage:message error:error];
-                            //NSLog(@"handleErrorWithMessage");
+                            // NSLog(@"handleErrorWithMessage");
                             return;
                           }
                         }
@@ -238,7 +244,7 @@
                             replaceCurrentItemWithPlayerItem:
                                 [AVPlayerItem playerItemWithAsset:newAsset]];
                       });
-
+                      [self play];
                     }];
 }
 
@@ -276,15 +282,24 @@
 }
 
 - (IBAction)playAudioPressed:(id)sender {
+  [self playPause];
+}
 
+- (void)pause {
+  [self.buttonPlay setImage:imagePlay forState:UIControlStateNormal];
+  [self.playController pauseAudio];
+}
+
+- (void)play {
+  [self.buttonPlay setImage:imagePause forState:UIControlStateNormal];
+  [self.playController playAudio];
+}
+
+- (void)playPause {
   if (![self.playController isPlaying]) {
-    [self.buttonPlay setImage:imagePause forState:UIControlStateNormal];
-    [self.playController playAudio];
-
+    [self play];
   } else {
-
-    [self.buttonPlay setImage:imagePlay forState:UIControlStateNormal];
-    [self.playController pauseAudio];
+    [self pause];
   }
 }
 
@@ -293,6 +308,22 @@
   LAVAudioReqResult *nextTrack = [[LAVAudioPlayer sharedInstance] getNextTrack];
   NSURL *url = [NSURL URLWithString:nextTrack.url];
 
+  NSString *artist = [LAVAudioPlayer sharedInstance].currentTrack.artist;
+  NSString *title = [LAVAudioPlayer sharedInstance].currentTrack.title;
+  [self.labelTitle
+      setText:[NSString stringWithFormat:@"%@ - %@", artist, title]];
+  self.asset = [AVURLAsset assetWithURL:url];
+}
+
+- (IBAction)buttonPrevPressed:(id)sender {
+
+  LAVAudioReqResult *prevTrack = [[LAVAudioPlayer sharedInstance] getPrevTrack];
+
+  NSURL *url = [NSURL URLWithString:prevTrack.url];
+  NSString *artist = [LAVAudioPlayer sharedInstance].currentTrack.artist;
+  NSString *title = [LAVAudioPlayer sharedInstance].currentTrack.title;
+  [self.labelTitle
+      setText:[NSString stringWithFormat:@"%@ - %@", artist, title]];
   self.asset = [AVURLAsset assetWithURL:url];
 }
 

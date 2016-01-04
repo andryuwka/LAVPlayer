@@ -43,14 +43,37 @@ typedef enum LAVAudioPlayerState LAVAudioPlayerState;
 - (LAVAudioReqResult *)getNextTrack {
   NSInteger index;
   if (!self.isShuffle) {
-    index = self.currentTrackIndex++;
+      if(self.currentTrackIndex == ([self.trackList count] - 1)) {
+          self.currentTrackIndex = 0;
+          index = self.currentTrackIndex;
+      } else {
+          index = ++self.currentTrackIndex;
+      }
   } else {
     index = arc4random() % [self.trackList count];
   }
-    
+    //NSLog(@"currentIndex = %ld", (long)self.currentTrackIndex);
   self.currentTrack = self.trackList[index];
   return self.trackList[index];
 }
+
+- (LAVAudioReqResult *)getPrevTrack {
+    NSInteger index;
+    if (!self.isShuffle) {
+        if(self.currentTrackIndex != 0) {
+            index = --self.currentTrackIndex;
+        } else {
+            self.currentTrackIndex = [self.trackList count];
+            index = --self.currentTrackIndex;
+        }
+    } else {
+        index = arc4random() % [self.trackList count];
+    }
+    NSLog(@"currentIndex = %ld", (long)self.currentTrackIndex);
+    self.currentTrack = self.trackList[index];
+    return self.trackList[index];
+}
+
 
 - (BOOL)isShuffle {
   return self.shuffle;

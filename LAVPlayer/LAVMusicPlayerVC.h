@@ -20,6 +20,8 @@
 @property (nonatomic, weak, readwrite) IBOutlet UISlider *sliderTrack;
 @property (nonatomic, weak, readwrite) IBOutlet UILabel *labelElapsedTime;
 @property (nonatomic, weak, readwrite) IBOutlet UILabel *labelLeftTime;
+@property (nonatomic, weak, readwrite) IBOutlet UILabel *labelTitle;
+
 
 @property (nonatomic, strong, readwrite) LAVAudioReqResult *track;
 @property (nonatomic, strong, readwrite) LAVAudioPlayer *playController;

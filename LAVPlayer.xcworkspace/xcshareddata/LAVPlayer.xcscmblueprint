@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "879FCAB746F8BF4A852642E1A1F6A233B0BD0CDA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "879FCAB746F8BF4A852642E1A1F6A233B0BD0CDA" : 0,
+    "7953573C9A7B665E2CC90CF946FFB407E05E486B" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "61F534CA-BE89-4D28-9A02-984343589783",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "879FCAB746F8BF4A852642E1A1F6A233B0BD0CDA" : "LAVPlayer\/",
+    "7953573C9A7B665E2CC90CF946FFB407E05E486B" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "LAVPlayer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "LAVPlayer.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:andryuwka\/ALYandexTranslator.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7953573C9A7B665E2CC90CF946FFB407E05E486B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:andryuwka\/LAVPlayer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "879FCAB746F8BF4A852642E1A1F6A233B0BD0CDA"
+    }
+  ]
+}
