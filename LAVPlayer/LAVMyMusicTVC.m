@@ -121,7 +121,7 @@
   [LAVAudioPlayer sharedInstance].currentTrack =
       self.trackList[self.selectedTrack];
   [LAVAudioPlayer sharedInstance].currentTrackIndex = indexPath.row;
-  NSLog(@"%ld", [LAVAudioPlayer sharedInstance].currentTrackIndex);
+  NSLog(@"%ld", (long)[LAVAudioPlayer sharedInstance].currentTrackIndex);
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

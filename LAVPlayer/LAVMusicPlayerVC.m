@@ -13,6 +13,12 @@
   UIImage *imagePause;
   UIImage *imageNext;
   UIImage *imagePrev;
+  UIImage *imageRepeat;
+  UIImage *imageShuffle;
+  UIImage *imagePlus;
+  UIImage *imageDownload;
+  UIImage *imageLyrics;
+
   id<NSObject> _timeObserverToken;
 }
 
@@ -23,11 +29,21 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.playController = [LAVAudioPlayer sharedInstance];
-
+  self.musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
   NSString *artist = [LAVAudioPlayer sharedInstance].currentTrack.artist;
   NSString *title = [LAVAudioPlayer sharedInstance].currentTrack.title;
-  [self.labelTitle
-      setText:[NSString stringWithFormat:@"%@ - %@", artist, title]];
+
+  UILabel *label =
+      [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 140.0, 40.0)];
+  label.backgroundColor = [UIColor clearColor];
+  label.font = [UIFont boldSystemFontOfSize:13.0];
+
+  label.numberOfLines = 2;
+  label.text = [NSString stringWithFormat:@"%@\n%@", artist, title];
+  label.textColor = [UIColor blackColor];
+  [label sizeToFit];
+  label.textAlignment = NSTextAlignmentCenter;
+  self.navigationItem.titleView = label;
 
   [self addObserver:self
          forKeyPath:@"asset"
@@ -100,17 +116,47 @@
   [self.buttonPlay setTitle:@"" forState:UIControlStateNormal];
   [self.buttonPrev setTitle:@"" forState:UIControlStateNormal];
   [self.buttonNext setTitle:@"" forState:UIControlStateNormal];
+  [self.buttonAdd setTitle:@"" forState:UIControlStateNormal];
+  [self.buttonDownload setTitle:@"" forState:UIControlStateNormal];
+  [self.buttonLyrics setTitle:@"" forState:UIControlStateNormal];
+  [self.buttonRepeat setTitle:@"" forState:UIControlStateNormal];
+  [self.buttonShuffle setTitle:@"" forState:UIControlStateNormal];
 
+    self.buttonsView.layer.borderWidth = 1.0f;
+    self.buttonsView.layer.borderColor = [UIColor blackColor].CGColor;
+    
   [self refreshLabels];
 
   imagePlay = [UIImage imageNamed:@"play"];
   imagePause = [UIImage imageNamed:@"pause"];
   imageNext = [UIImage imageNamed:@"end"];
   imagePrev = [UIImage imageNamed:@"skip_to_start"];
+  imageRepeat = [UIImage imageNamed:@"repeat"];
+  imageShuffle = [UIImage imageNamed:@"shuffle"];
+  imagePlus = [UIImage imageNamed:@"plus_math"];
+  imageDownload = [UIImage imageNamed:@"software_installer"];
+  imageLyrics = [UIImage imageNamed:@"align_center"];
 
   [self.buttonPlay setImage:imagePlay forState:UIControlStateNormal];
   [self.buttonNext setImage:imageNext forState:UIControlStateNormal];
   [self.buttonPrev setImage:imagePrev forState:UIControlStateNormal];
+  [self.buttonAdd setImage:imagePlus forState:UIControlStateNormal];
+  [self.buttonDownload setImage:imageDownload forState:UIControlStateNormal];
+  [self.buttonLyrics setImage:imageLyrics forState:UIControlStateNormal];
+  [self.buttonRepeat setImage:imageRepeat forState:UIControlStateNormal];
+  [self.buttonShuffle setImage:imageShuffle forState:UIControlStateNormal];
+
+    self.buttonAdd.tintColor = [UIColor blackColor];
+    self.buttonDownload.tintColor = [UIColor blackColor];
+    self.buttonLyrics.tintColor = [UIColor blackColor];
+    self.buttonNext.tintColor = [UIColor blackColor];
+    self.buttonPlay.tintColor = [UIColor blackColor];
+    self.buttonPrev.tintColor = [UIColor blackColor];
+    self.buttonRepeat.tintColor = [UIColor blackColor];
+    self.buttonShuffle.tintColor = [UIColor blackColor];
+                                    
+    
+    
   [self.imgView setImage:[UIImage imageNamed:@"background"]];
 }
 
@@ -310,8 +356,10 @@
 
   NSString *artist = [LAVAudioPlayer sharedInstance].currentTrack.artist;
   NSString *title = [LAVAudioPlayer sharedInstance].currentTrack.title;
-  [self.labelTitle
-      setText:[NSString stringWithFormat:@"%@ - %@", artist, title]];
+
+  UILabel *label = (UILabel *)self.navigationItem.titleView;
+  label.text = [NSString stringWithFormat:@"%@\n%@", artist, title];
+
   self.asset = [AVURLAsset assetWithURL:url];
 }
 
@@ -322,8 +370,10 @@
   NSURL *url = [NSURL URLWithString:prevTrack.url];
   NSString *artist = [LAVAudioPlayer sharedInstance].currentTrack.artist;
   NSString *title = [LAVAudioPlayer sharedInstance].currentTrack.title;
-  [self.labelTitle
-      setText:[NSString stringWithFormat:@"%@ - %@", artist, title]];
+
+  UILabel *label = (UILabel *)self.navigationItem.titleView;
+  label.text = [NSString stringWithFormat:@"%@\n%@", artist, title];
+
   self.asset = [AVURLAsset assetWithURL:url];
 }
 
@@ -344,7 +394,8 @@
 }
 
 - (IBAction)setVolume:(id)sender {
-  [self.playController.player setVolume:self.sliderVolume.value];
+  //  [self.playController.player setVolume:self.sliderVolume.value];
+  self.musicPlayer.volume = self.sliderVolume.value;
 }
 
 - (IBAction)setCurrentAudioTime:(id)sender {

@@ -21,6 +21,7 @@
 		49FF49AB1BD5CD0D00C15241 /* LAVAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FF49AA1BD5CD0D00C15241 /* LAVAudioPlayer.m */; };
 		592A40601C3AF06C0079E7B2 /* LAVTrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 592A405E1C3AF06C0079E7B2 /* LAVTrackCell.m */; };
 		592A40611C3AF06C0079E7B2 /* LAVTrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 592A405F1C3AF06C0079E7B2 /* LAVTrackCell.xib */; };
+		599E8B761C3BD8AC00BD16D9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599E8B751C3BD8AC00BD16D9 /* AudioToolbox.framework */; };
 		59A5A7961BEA8F2A000D4DEE /* LAVDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A5A7951BEA8F2A000D4DEE /* LAVDownloadManager.m */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		592A405D1C3AF06C0079E7B2 /* LAVTrackCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAVTrackCell.h; sourceTree = "<group>"; };
 		592A405E1C3AF06C0079E7B2 /* LAVTrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAVTrackCell.m; sourceTree = "<group>"; };
 		592A405F1C3AF06C0079E7B2 /* LAVTrackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LAVTrackCell.xib; sourceTree = "<group>"; };
+		599E8B751C3BD8AC00BD16D9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		59A5A7941BEA8F2A000D4DEE /* LAVDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAVDownloadManager.h; sourceTree = "<group>"; };
 		59A5A7951BEA8F2A000D4DEE /* LAVDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAVDownloadManager.m; sourceTree = "<group>"; };
 		CF28E96D943FC09AE2E13BB1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				599E8B761C3BD8AC00BD16D9 /* AudioToolbox.framework in Frameworks */,
 				49FF49A81BD5C9E300C15241 /* AVFoundation.framework in Frameworks */,
 				3E5751D437936CDBD0911060 /* libPods.a in Frameworks */,
 			);
@@ -92,10 +95,10 @@
 				49FF49A01BD599B000C15241 /* Models */,
 				49FF49901BD53C0A00C15241 /* Controllers */,
 				49FF49791BD52ADB00C15241 /* AppDelegate.h */,
+				49FF497A1BD52ADB00C15241 /* AppDelegate.m */,
 				592A405D1C3AF06C0079E7B2 /* LAVTrackCell.h */,
 				592A405E1C3AF06C0079E7B2 /* LAVTrackCell.m */,
 				592A405F1C3AF06C0079E7B2 /* LAVTrackCell.xib */,
-				49FF497A1BD52ADB00C15241 /* AppDelegate.m */,
 				49FF497F1BD52ADB00C15241 /* Main.storyboard */,
 				49FF49821BD52ADB00C15241 /* Assets.xcassets */,
 				49FF49871BD52ADB00C15241 /* Info.plist */,
@@ -143,6 +146,7 @@
 		AAAEDAE40E1D33580463374A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				599E8B751C3BD8AC00BD16D9 /* AudioToolbox.framework */,
 				49FF49A71BD5C9E300C15241 /* AVFoundation.framework */,
 				48F9AC0FBF92FD6FF9F79904 /* libPods.a */,
 			);
