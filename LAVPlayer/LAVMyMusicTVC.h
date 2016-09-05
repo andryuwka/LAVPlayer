@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LAVMyMusicTVC : UITableViewController <UITableViewDataSource>
+@interface LAVMyMusicTVC : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 
 @property (nonatomic, strong, readwrite) NSArray *trackList;
+@property (nonatomic, weak, readwrite) IBOutlet UITableView *tableView;
 
 - (void)setTrackList:(NSArray *)trackList;
 

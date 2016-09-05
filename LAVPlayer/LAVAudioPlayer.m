@@ -23,7 +23,6 @@ typedef enum LAVAudioPlayerState LAVAudioPlayerState;
   if (self) {
     self.playing = false;
     self.shuffle = false;
-    
   }
 
   return self;
@@ -43,37 +42,36 @@ typedef enum LAVAudioPlayerState LAVAudioPlayerState;
 - (LAVAudioReqResult *)getNextTrack {
   NSInteger index;
   if (!self.isShuffle) {
-      if(self.currentTrackIndex == ([self.trackList count] - 1)) {
-          self.currentTrackIndex = 0;
-          index = self.currentTrackIndex;
-      } else {
-          index = ++self.currentTrackIndex;
-      }
+    if (self.currentTrackIndex == ([self.trackList count] - 1)) {
+      self.currentTrackIndex = 0;
+      index = self.currentTrackIndex;
+    } else {
+      index = ++self.currentTrackIndex;
+    }
   } else {
     index = arc4random() % [self.trackList count];
   }
-    //NSLog(@"currentIndex = %ld", (long)self.currentTrackIndex);
+  // NSLog(@"currentIndex = %ld", (long)self.currentTrackIndex);
   self.currentTrack = self.trackList[index];
   return self.trackList[index];
 }
 
 - (LAVAudioReqResult *)getPrevTrack {
-    NSInteger index;
-    if (!self.isShuffle) {
-        if(self.currentTrackIndex != 0) {
-            index = --self.currentTrackIndex;
-        } else {
-            self.currentTrackIndex = [self.trackList count];
-            index = --self.currentTrackIndex;
-        }
+  NSInteger index;
+  if (!self.isShuffle) {
+    if (self.currentTrackIndex != 0) {
+      index = --self.currentTrackIndex;
     } else {
-        index = arc4random() % [self.trackList count];
+      self.currentTrackIndex = [self.trackList count];
+      index = --self.currentTrackIndex;
     }
-    NSLog(@"currentIndex = %ld", (long)self.currentTrackIndex);
-    self.currentTrack = self.trackList[index];
-    return self.trackList[index];
+  } else {
+    index = arc4random() % [self.trackList count];
+  }
+  NSLog(@"currentIndex = %ld", (long)self.currentTrackIndex);
+  self.currentTrack = self.trackList[index];
+  return self.trackList[index];
 }
-
 
 - (BOOL)isShuffle {
   return self.shuffle;
@@ -108,13 +106,14 @@ typedef enum LAVAudioPlayerState LAVAudioPlayerState;
     }
     self.trackList = list;
 
-  } errorBlock:^(NSError *error) {
-    if (error.code != VK_API_ERROR) {
-      [error.vkError.request repeat];
-    } else {
-      NSLog(@"VK error: %@", error);
-    }
-  }];
+  }
+      errorBlock:^(NSError *error) {
+        if (error.code != VK_API_ERROR) {
+          [error.vkError.request repeat];
+        } else {
+          NSLog(@"VK error: %@", error);
+        }
+      }];
   return self.trackList;
 }
 

@@ -13,7 +13,6 @@
 		49FF49811BD52ADB00C15241 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FF497F1BD52ADB00C15241 /* Main.storyboard */; };
 		49FF49831BD52ADB00C15241 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FF49821BD52ADB00C15241 /* Assets.xcassets */; };
 		49FF49931BD53C3600C15241 /* LAVLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FF49921BD53C3600C15241 /* LAVLoginVC.m */; };
-		49FF499C1BD583B100C15241 /* LAVDownloadsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FF499B1BD583B100C15241 /* LAVDownloadsTVC.m */; };
 		49FF499F1BD5884700C15241 /* LAVMyMusicTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FF499E1BD5884700C15241 /* LAVMyMusicTVC.m */; };
 		49FF49A31BD599D500C15241 /* LAVAudioReqResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FF49A21BD599D500C15241 /* LAVAudioReqResult.m */; };
 		49FF49A61BD5A89D00C15241 /* LAVMusicPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FF49A51BD5A89D00C15241 /* LAVMusicPlayerVC.m */; };
@@ -22,7 +21,6 @@
 		592A40601C3AF06C0079E7B2 /* LAVTrackCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 592A405E1C3AF06C0079E7B2 /* LAVTrackCell.m */; };
 		592A40611C3AF06C0079E7B2 /* LAVTrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 592A405F1C3AF06C0079E7B2 /* LAVTrackCell.xib */; };
 		599E8B761C3BD8AC00BD16D9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 599E8B751C3BD8AC00BD16D9 /* AudioToolbox.framework */; };
-		59A5A7961BEA8F2A000D4DEE /* LAVDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A5A7951BEA8F2A000D4DEE /* LAVDownloadManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +35,6 @@
 		49FF49871BD52ADB00C15241 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49FF49911BD53C3600C15241 /* LAVLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAVLoginVC.h; sourceTree = "<group>"; };
 		49FF49921BD53C3600C15241 /* LAVLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAVLoginVC.m; sourceTree = "<group>"; };
-		49FF499A1BD583B100C15241 /* LAVDownloadsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAVDownloadsTVC.h; sourceTree = "<group>"; };
-		49FF499B1BD583B100C15241 /* LAVDownloadsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAVDownloadsTVC.m; sourceTree = "<group>"; };
 		49FF499D1BD5884700C15241 /* LAVMyMusicTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAVMyMusicTVC.h; sourceTree = "<group>"; };
 		49FF499E1BD5884700C15241 /* LAVMyMusicTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAVMyMusicTVC.m; sourceTree = "<group>"; };
 		49FF49A11BD599D500C15241 /* LAVAudioReqResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAVAudioReqResult.h; sourceTree = "<group>"; };
@@ -52,8 +48,6 @@
 		592A405E1C3AF06C0079E7B2 /* LAVTrackCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAVTrackCell.m; sourceTree = "<group>"; };
 		592A405F1C3AF06C0079E7B2 /* LAVTrackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LAVTrackCell.xib; sourceTree = "<group>"; };
 		599E8B751C3BD8AC00BD16D9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		59A5A7941BEA8F2A000D4DEE /* LAVDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAVDownloadManager.h; sourceTree = "<group>"; };
-		59A5A7951BEA8F2A000D4DEE /* LAVDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAVDownloadManager.m; sourceTree = "<group>"; };
 		CF28E96D943FC09AE2E13BB1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,13 +86,11 @@
 		49FF49751BD52ADB00C15241 /* LAVPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				59FD8D9C1C3C73CB00876FCE /* Views */,
 				49FF49A01BD599B000C15241 /* Models */,
 				49FF49901BD53C0A00C15241 /* Controllers */,
 				49FF49791BD52ADB00C15241 /* AppDelegate.h */,
 				49FF497A1BD52ADB00C15241 /* AppDelegate.m */,
-				592A405D1C3AF06C0079E7B2 /* LAVTrackCell.h */,
-				592A405E1C3AF06C0079E7B2 /* LAVTrackCell.m */,
-				592A405F1C3AF06C0079E7B2 /* LAVTrackCell.xib */,
 				49FF497F1BD52ADB00C15241 /* Main.storyboard */,
 				49FF49821BD52ADB00C15241 /* Assets.xcassets */,
 				49FF49871BD52ADB00C15241 /* Info.plist */,
@@ -120,14 +112,10 @@
 			children = (
 				49FF49911BD53C3600C15241 /* LAVLoginVC.h */,
 				49FF49921BD53C3600C15241 /* LAVLoginVC.m */,
-				49FF499A1BD583B100C15241 /* LAVDownloadsTVC.h */,
-				49FF499B1BD583B100C15241 /* LAVDownloadsTVC.m */,
 				49FF499D1BD5884700C15241 /* LAVMyMusicTVC.h */,
 				49FF499E1BD5884700C15241 /* LAVMyMusicTVC.m */,
 				49FF49A41BD5A89D00C15241 /* LAVMusicPlayerVC.h */,
 				49FF49A51BD5A89D00C15241 /* LAVMusicPlayerVC.m */,
-				59A5A7941BEA8F2A000D4DEE /* LAVDownloadManager.h */,
-				59A5A7951BEA8F2A000D4DEE /* LAVDownloadManager.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -141,6 +129,16 @@
 				49FF49AA1BD5CD0D00C15241 /* LAVAudioPlayer.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		59FD8D9C1C3C73CB00876FCE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				592A405D1C3AF06C0079E7B2 /* LAVTrackCell.h */,
+				592A405E1C3AF06C0079E7B2 /* LAVTrackCell.m */,
+				592A405F1C3AF06C0079E7B2 /* LAVTrackCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		AAAEDAE40E1D33580463374A /* Frameworks */ = {
@@ -273,8 +271,6 @@
 				49FF49781BD52ADB00C15241 /* main.m in Sources */,
 				592A40601C3AF06C0079E7B2 /* LAVTrackCell.m in Sources */,
 				49FF49A61BD5A89D00C15241 /* LAVMusicPlayerVC.m in Sources */,
-				59A5A7961BEA8F2A000D4DEE /* LAVDownloadManager.m in Sources */,
-				49FF499C1BD583B100C15241 /* LAVDownloadsTVC.m in Sources */,
 				49FF49AB1BD5CD0D00C15241 /* LAVAudioPlayer.m in Sources */,
 				49FF499F1BD5884700C15241 /* LAVMyMusicTVC.m in Sources */,
 				49FF49A31BD599D500C15241 /* LAVAudioReqResult.m in Sources */,

@@ -39,14 +39,15 @@
   NSString *d = [NSString
       stringWithFormat:@"\nartist = %@\ndate = %@\nduration = %@\n"
                        @"genre_id = %@\naudio_id = %@\nlyrics_id = %@\n"
-                       @"owner_id = %@\ntitle = %@\nurl = %@", self.artist, self.date, self.duration,
-                       self.genre_id, self.audio_id, self.lyrics_id,
-                       self.owner_id, self.title, self.url];
+                       @"owner_id = %@\ntitle = %@\nurl = %@",
+                       self.artist, self.date, self.duration, self.genre_id,
+                       self.audio_id, self.lyrics_id, self.owner_id, self.title,
+                       self.url];
   return d;
 }
 
 - (BOOL)isEqual:(LAVAudioReqResult *)object {
-    return ([object.title isEqualToString:self.title]);
+  return ([object.title isEqualToString:self.title]);
 }
 
 @end

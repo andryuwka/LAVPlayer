@@ -6,11 +6,11 @@
 //  Copyright © 2015 Andrew Lebedev. All rights reserved.
 //
 
-#import "LAVMyMusicTVC.h"
-#import "VKSdk.h"
 #import "LAVAudioReqResult.h"
 #import "LAVMusicPlayerVC.h"
+#import "LAVMyMusicTVC.h"
 #import "LAVTrackCell.h"
+#import "VKSdk.h"
 
 @interface LAVMyMusicTVC ()
 
@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
 
+  self.navigationController.navigationBar.barTintColor = [UIColor redColor];
+  self.navigationController.navigationBar.translucent = NO;
   [self.tableView setRowHeight:UITableViewAutomaticDimension];
   [self.tableView registerNib:[UINib nibWithNibName:@"LAVTrackCell" bundle:nil]
        forCellReuseIdentifier:@"Cell"];
@@ -59,13 +61,14 @@
     }
     self.trackList = list;
 
-  } errorBlock:^(NSError *error) {
-    if (error.code != VK_API_ERROR) {
-      [error.vkError.request repeat];
-    } else {
-      NSLog(@"VK error: %@", error);
-    }
-  }];
+  }
+      errorBlock:^(NSError *error) {
+        if (error.code != VK_API_ERROR) {
+          [error.vkError.request repeat];
+        } else {
+          NSLog(@"VK error: %@", error);
+        }
+      }];
 }
 
 - (void)setTrackList:(NSArray *)trackList {
@@ -94,7 +97,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   static NSString *identifier = @"Cell";
-  LAVTrackCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+  LAVTrackCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier
+                                                       forIndexPath:indexPath];
   cell.selectionStyle = UITableViewCellSelectionStyleNone;
   if (!cell) {
     cell = [[LAVTrackCell alloc] initWithStyle:UITableViewCellStyleDefault
@@ -103,7 +107,7 @@
 
   NSArray *list = self.trackList;
   LAVAudioReqResult *current = list[indexPath.row];
-  
+
   [cell setArtist:current.artist title:current.title andUrl:current.url];
 
   return cell;
@@ -115,9 +119,10 @@
     didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
   self.selectedTrack = indexPath.row;
-  dispatch_async(dispatch_get_main_queue(), ^{
-    [self performSegueWithIdentifier:@"TO_PLAYER" sender:self];
-  });
+  UIViewController *playerVC = [self.storyboard
+      instantiateViewControllerWithIdentifier:@"LAVMusicPlayerVC"];
+  [self.navigationController pushViewController:playerVC animated:YES];
+
   [LAVAudioPlayer sharedInstance].currentTrack =
       self.trackList[self.selectedTrack];
   [LAVAudioPlayer sharedInstance].currentTrackIndex = indexPath.row;
@@ -128,6 +133,11 @@
   if ([[segue identifier] isEqualToString:@"TO_PLAYER"]) {
     // LAVMusicPlayerVC *vc = [segue destinationViewController];
   }
+}
+
+#pragma mark - IBActions
+- (IBAction)backButtonClicked:(id)sender {
+  [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
